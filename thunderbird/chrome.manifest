@@ -1,12 +1,8 @@
 content       otrmail                jar:chrome/otrmail.jar!/content/otrmail/
 locale        otrmail    en-US       jar:chrome/otrmail.jar!/locale/en-US/
 
-# Skin for TBird Mac OS X
-skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-mac/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=Darwin
 # Skin for TBird Windows
 skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/classic/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=WINNT osversion<6
-skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/aero/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=WINNT osversion>=6
-skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/classic/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=OS2
 # Skin for TBird other OS (e.g. Linux)
 skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=Linux
 skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=SunOS
@@ -18,7 +14,7 @@ skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrma
 skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=DragonFly
 # Skin for SeaMonkey
 skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/classic-seamonkey/otrmail/ application={77d843d0-e1a9-11e1-9b23-0800200c9a66}
-skin          otrmail    modern/1.0 jar:chrome/otrmail.jar!/skin/modern/otrmail/
+
 overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://otrmail/content/otrmailCheckLanguage.xul
 overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://otrmail/content/otrmailMsgComposeOverlay.xul
 overlay chrome://messenger/content/mailWindowOverlay.xul chrome://otrmail/content/otrmailCheckLanguage.xul
