@@ -1,0 +1,148 @@
+content       otrmail                jar:chrome/otrmail.jar!/content/otrmail/
+locale        otrmail    en-US       jar:chrome/otrmail.jar!/locale/en-US/
+
+# Skin for TBird Mac OS X
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-mac/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=Darwin
+# Skin for TBird Windows
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/classic/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=WINNT osversion<6
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/aero/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=WINNT osversion>=6
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/classic/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=OS2
+# Skin for TBird other OS (e.g. Linux)
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=Linux
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=SunOS
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=FreeBSD
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=OpenBSD
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=NetBSD
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=AIX
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=HP-UX
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/tb-linux/otrmail/ application!={77d843d0-e1a9-11e1-9b23-0800200c9a66} os=DragonFly
+# Skin for SeaMonkey
+skin          otrmail    classic/1.0 jar:chrome/otrmail.jar!/skin/classic-seamonkey/otrmail/ application={77d843d0-e1a9-11e1-9b23-0800200c9a66}
+skin          otrmail    modern/1.0 jar:chrome/otrmail.jar!/skin/modern/otrmail/
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://otrmail/content/otrmailCheckLanguage.xul
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://otrmail/content/otrmailMsgComposeOverlay.xul
+overlay chrome://messenger/content/mailWindowOverlay.xul chrome://otrmail/content/otrmailCheckLanguage.xul
+overlay chrome://messenger/content/messenger.xul chrome://otrmail/content/columnOverlay.xul
+overlay chrome://messenger/content/csMailWindowOverlay.xul chrome://otrmail/content/otrmailCheckLanguage.xul
+overlay chrome://messenger/content/mailWindowOverlay.xul chrome://otrmail/content/otrmailMessengerOverlay.xul
+overlay chrome://messenger/content/csMailWindowOverlay.xul chrome://otrmail/content/otrmailMessengerOverlay.xul
+overlay chrome://messenger/content/msgHdrViewOverlay.xul chrome://otrmail/content/otrmailMsgHdrViewOverlay.xul
+overlay chrome://messenger/content/msgPrintEngine.xul chrome://otrmail/content/otrmailMsgPrintOverlay.xul
+overlay chrome://messenger/content/am-identity-edit.xul chrome://otrmail/content/otrmailAmIdEditOverlay.xul
+overlay chrome://messenger/content/am-identity-edit.xul chrome://otrmail/content/otrmailEditIdentity.xul
+overlay chrome://messenger/content/addressbook/addressbook.xul chrome://otrmail/content/otrmailAbCardViewOverlay.xul
+overlay chrome://messenger/content/addressbook/csContactsOverlay.xul chrome://otrmail/content/otrmailAbCardViewOverlay.xul
+overlay chrome://messenger/content/addressbook/abContactsPanel.xul chrome://otrmail/content/otrmailAbContactsPanel.xul
+overlay chrome://global/content/customizeToolbar.xul chrome://otrmail/content/otrmailCustToolOverlay.xul
+overlay chrome://communicator/content/pref/preftree.xul chrome://otrmail/content/otrmailPrefsOverlay.xul
+overlay chrome://otrmail/content/am-otrprefs.xul chrome://otrmail/content/otrmailEditIdentity.xul
+overlay chrome://otrmail/content/am-otrprefs-edit.xul chrome://otrmail/content/otrmailEditIdentity.xul
+
+## Gecko 2.0 JavaScript component registration
+# otrmail
+component {847b3a01-7ab1-11d4-8f02-006008948af5} components/otrmail.js
+contract @mozdev.org/otrmail/otrmail;1 {847b3a01-7ab1-11d4-8f02-006008948af5}
+
+# otrmailProtocolHandler
+component {847b3a11-7ab1-11d4-8f02-006008948af5} components/otrmail.js
+contract @mozilla.org/network/protocol;1?name=otrmail {847b3a11-7ab1-11d4-8f02-006008948af5}
+
+# Command line service
+component {847b3ab1-7ab1-11d4-8f02-006008948af5} components/otrmail.js
+contract @mozilla.org/otrmail/cline-handler;1 {847b3ab1-7ab1-11d4-8f02-006008948af5}
+category command-line-handler cline-otrmail @mozilla.org/otrmail/cline-handler;1
+
+# otrMsgCompFields
+component {847b3a30-7ab1-11d4-8f02-006008948af5} components/otrMsgCompFields.js
+contract @mozdev.org/otrmail/composefields;1 {847b3a30-7ab1-11d4-8f02-006008948af5}
+
+# Preference Service
+component {847b3ab0-7ab1-11d4-8f02-006008948af5} components/otrprefs-service.js
+contract @mozilla.org/accountmanager/extension;1?name=otrprefs {847b3ab0-7ab1-11d4-8f02-006008948af5}
+category mailnews-accountmanager-extensions otrmail-account-manager-extension @mozilla.org/accountmanager/extension;1?name=otrprefs
+
+# Resource module registration
+resource otrmail modules/
+
+## Gecko 2.0 interface specifiacations
+interfaces  components/ipc.xpt
+interfaces  components/otrmime.xpt
+interfaces  components/otrmail.xpt
+
+## Gecko 2.0 binary components
+
+# Additional languages
+locale        otrmail    ar       jar:chrome/otrmail.jar!/locale/ar/
+locale        otrmail    bg-BG       jar:chrome/otrmail.jar!/locale/bg-BG/
+locale        otrmail    ca       jar:chrome/otrmail.jar!/locale/ca/
+locale        otrmail    cs-CZ       jar:chrome/otrmail.jar!/locale/cs-CZ/
+locale        otrmail    de       jar:chrome/otrmail.jar!/locale/de/
+locale        otrmail    el       jar:chrome/otrmail.jar!/locale/el/
+locale        otrmail    es-ES       jar:chrome/otrmail.jar!/locale/es-ES/
+locale        otrmail    fi-FI       jar:chrome/otrmail.jar!/locale/fi-FI/
+locale        otrmail    fr       jar:chrome/otrmail.jar!/locale/fr/
+locale        otrmail    gl-ES       jar:chrome/otrmail.jar!/locale/gl-ES/
+locale        otrmail    hu-HU       jar:chrome/otrmail.jar!/locale/hu-HU/
+locale        otrmail    it-IT       jar:chrome/otrmail.jar!/locale/it-IT/
+locale        otrmail    ja-JP       jar:chrome/otrmail.jar!/locale/ja-JP/
+locale        otrmail    ko-KR       jar:chrome/otrmail.jar!/locale/ko-KR/
+locale        otrmail    lt       jar:chrome/otrmail.jar!/locale/lt/
+locale        otrmail    nb-NO       jar:chrome/otrmail.jar!/locale/nb-NO/
+locale        otrmail    nl       jar:chrome/otrmail.jar!/locale/nl/
+locale        otrmail    pl       jar:chrome/otrmail.jar!/locale/pl/
+locale        otrmail    pt-BR       jar:chrome/otrmail.jar!/locale/pt-BR/
+locale        otrmail    pt-PT       jar:chrome/otrmail.jar!/locale/pt-PT/
+locale        otrmail    ru-RU       jar:chrome/otrmail.jar!/locale/ru-RU/
+locale        otrmail    sk-SK       jar:chrome/otrmail.jar!/locale/sk-SK/
+locale        otrmail    sl-SI       jar:chrome/otrmail.jar!/locale/sl-SI/
+locale        otrmail    sv-SE       jar:chrome/otrmail.jar!/locale/sv-SE/
+locale        otrmail    tr       jar:chrome/otrmail.jar!/locale/tr/
+locale        otrmail    vi       jar:chrome/otrmail.jar!/locale/vi/
+locale        otrmail    zh-CN       jar:chrome/otrmail.jar!/locale/zh-CN/
+locale        otrmail    zh-TW       jar:chrome/otrmail.jar!/locale/zh-TW/
+# Linux x86-32
+
+# Linux x86-64
+
+# Windows
+
+binary-component platform/Darwin_x86_64-gcc3/gecko-13/libotrmime-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-13/libotrmime-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-13/libipc-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-13/libipc-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Darwin_x86-gcc3/gecko-13/libotrmime-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Darwin_x86-gcc3/gecko-13/libotrmime-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Darwin_x86-gcc3/gecko-13/libipc-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Darwin_x86-gcc3/gecko-13/libipc-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Linux_x86-gcc3/gecko-13/libotrmime-x86-gcc3.so ABI=Linux_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Linux_x86-gcc3/gecko-13/libotrmime-x86-gcc3.so ABI=Linux_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Linux_x86-gcc3/gecko-13/libipc-x86-gcc3.so ABI=Linux_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Linux_x86-gcc3/gecko-13/libipc-x86-gcc3.so ABI=Linux_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Linux_x86_64-gcc3/gecko-13/libotrmime-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Linux_x86_64-gcc3/gecko-13/libotrmime-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Linux_x86_64-gcc3/gecko-13/libipc-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/Linux_x86_64-gcc3/gecko-13/libipc-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/WINNT_x86-msvc/gecko-13/otrmime-x86-msvc.dll ABI=WINNT_x86-msvc application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/WINNT_x86-msvc/gecko-13/otrmime-x86-msvc.dll ABI=WINNT_x86-msvc application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/WINNT_x86-msvc/gecko-13/ipc-x86-msvc.dll ABI=WINNT_x86-msvc application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion<=13.*
+binary-component platform/WINNT_x86-msvc/gecko-13/ipc-x86-msvc.dll ABI=WINNT_x86-msvc application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion<=2.10.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-14/libotrmime-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-14/libotrmime-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-14/libipc-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Darwin_x86_64-gcc3/gecko-14/libipc-x86_64-gcc3.dylib ABI=Darwin_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Darwin_x86-gcc3/gecko-14/libotrmime-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Darwin_x86-gcc3/gecko-14/libotrmime-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Darwin_x86-gcc3/gecko-14/libipc-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Darwin_x86-gcc3/gecko-14/libipc-x86-gcc3.dylib ABI=Darwin_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Linux_x86-gcc3/gecko-14/libotrmime-x86-gcc3.so ABI=Linux_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Linux_x86-gcc3/gecko-14/libotrmime-x86-gcc3.so ABI=Linux_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Linux_x86-gcc3/gecko-14/libipc-x86-gcc3.so ABI=Linux_x86-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Linux_x86-gcc3/gecko-14/libipc-x86-gcc3.so ABI=Linux_x86-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Linux_x86_64-gcc3/gecko-14/libotrmime-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Linux_x86_64-gcc3/gecko-14/libotrmime-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/Linux_x86_64-gcc3/gecko-14/libipc-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/Linux_x86_64-gcc3/gecko-14/libipc-x86_64-gcc3.so ABI=Linux_x86_64-gcc3 application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/WINNT_x86-msvc/gecko-14/otrmime-x86-msvc.dll ABI=WINNT_x86-msvc application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/WINNT_x86-msvc/gecko-14/otrmime-x86-msvc.dll ABI=WINNT_x86-msvc application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
+binary-component platform/WINNT_x86-msvc/gecko-14/ipc-x86-msvc.dll ABI=WINNT_x86-msvc application={3550f703-e582-4d05-9a08-453d09bdfdc6} appversion>13.*
+binary-component platform/WINNT_x86-msvc/gecko-14/ipc-x86-msvc.dll ABI=WINNT_x86-msvc application={77d843d0-e1a9-11e1-9b23-0800200c9a66} appversion>2.10.*
