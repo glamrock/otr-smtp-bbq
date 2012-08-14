@@ -6,7 +6,9 @@ This is so pre-Alpha that it's looped back around to Omega.
 
 <b>So don't use it.</b> :P
 
-UUID for this build is:
-{77d843d0-e1a9-11e1-9b23-0800200c9a66}
+<h2>About</h2>
+What if we could use OTR to encrypt emails with the same ease as just chatting?
 
-Within the program, the common reference is "<i>otrmail</i>" and not the working github title.
+<h3>/derp/thunderbird/</h3>
+<code>UUID for this build is: {77d843d0-e1a9-11e1-9b23-0800200c9a66}</code>
+Within thunderbird, the common reference is "<i>otrmail</i>" and not the working github title.
